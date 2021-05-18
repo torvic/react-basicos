@@ -2,7 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import Componente from './components/Componente'
 import Propiedades from './components/Propiedades'
+import Estado from './components/Estado'
 import './App.css';
+import RenderizadoCondicional from './components/RenderizadoCondicional';
 
 function App() {
   let personas = ["Alfonso", "Ugarte", "San", "mArtin"];
@@ -45,6 +47,10 @@ function App() {
         elementoReact={<i>Este es un elemento React</i>} 
         componenteReact={<Componente msg="Soy un componente basado como prop"/>}
         />
+        <hr/>
+        <Estado/>
+        <hr/>
+        <RenderizadoCondicional/>
       </section>
       </header>
     </div>
