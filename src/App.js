@@ -6,7 +6,10 @@ import Estado from './components/Estado'
 import './App.css';
 import RenderizadoCondicional from './components/RenderizadoCondicional';
 import RenderizadoElementos from './components/RenderizadoElementos';
-import Eventos from './components/Eventos';
+import {EventosES6, EventosES7, MasSobreEventos} from './components/Eventos';
+import ComunicacionComponente from './components/ComunicacionComponente';
+import CicloVida from './components/CicloVida';
+import AjaxApis from './components/AjaxApis';
 
 function App() {
   let personas = ["Alfonso", "Ugarte", "San", "mArtin"];
@@ -56,7 +59,17 @@ function App() {
         <hr/>
         <RenderizadoElementos/>
         <hr/>
-        <Eventos/>
+        <EventosES6/>
+        <hr/>
+        <EventosES7/>
+        <hr/>
+        <MasSobreEventos/>
+        <hr/>
+        <ComunicacionComponente/>
+        <hr/>
+        <CicloVida/>
+        <hr/>
+        <AjaxApis/>
       </section>
       </header>
     </div>
