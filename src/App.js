@@ -16,6 +16,7 @@ import RelojHooks from './components/RelojHooks'
 import AjaxHooks from './components/AjaxHooks';
 import HooksPersonalizados from './components/HooksPersonalizados';
 import Referencias from './components/referencias';
+import Formularios from './components/Formularios';
 
 function App() {
   let personas = ["Alfonso", "Ugarte", "San", "mArtin"];
@@ -88,6 +89,13 @@ function App() {
         <HooksPersonalizados/>
         <hr/>
         <Referencias/>
+        <hr/>
+        <Formularios/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </section>
       </header>
     </div>
