@@ -17,6 +17,7 @@ import AjaxHooks from './components/AjaxHooks';
 import HooksPersonalizados from './components/HooksPersonalizados';
 import Referencias from './components/referencias';
 import Formularios from './components/Formularios';
+import Estilos from './components/Estilos';
 
 function App() {
   let personas = ["Alfonso", "Ugarte", "San", "mArtin"];
@@ -96,6 +97,8 @@ function App() {
         <br/>
         <br/>
         <br/>
+        <hr/>
+        <Estilos/>
       </section>
       </header>
     </div>
