@@ -1,8 +1,7 @@
-import React from 'react'
-import ClientsTableRow from './ClientsTableRow'
+import React from "react";
+import ClientsTableRow from "./ClientsTableRow";
 
-const ClientsTable = ({data}) => {
-  console.log(data.length);
+const ClientsTable = ({ data, setDataToEdit, deleteData }) => {
   return (
     <div>
       <h3>Table of Clients</h3>
@@ -15,6 +14,7 @@ const ClientsTable = ({data}) => {
             <th>Direccion</th>
             <th>Departamento</th>
             <th>Provincia</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +23,8 @@ const ClientsTable = ({data}) => {
               <ClientsTableRow
                 key={el.id}
                 el={el}
+                setDataToEdit={setDataToEdit}
+                deleteData={deleteData}
               />
             ))
           ) : (
@@ -33,7 +35,7 @@ const ClientsTable = ({data}) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default ClientsTable
+export default ClientsTable;

@@ -9,11 +9,11 @@ function App() {
       <h1>Ejercicios con React</h1>
       <hr/>
       <ClientsApi/>
-      <hr/>
+      {/* <hr/>
       <CrudApi/>
       <hr/>
       <CrudApp/>
-      <hr/>
+      <hr/> */}
     </>
   );
 }

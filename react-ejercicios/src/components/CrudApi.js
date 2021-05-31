@@ -40,7 +40,7 @@ export default function CrudApi() {
     };
 
     api.post(url, options).then((res) => {
-      console.log(res);
+      //console.log(res);
       if (!res.err) {
         setDb([...db, res]);
       } else {
