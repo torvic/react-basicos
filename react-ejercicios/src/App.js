@@ -3,6 +3,7 @@ import CrudApp from './components/CrudApp';
 import CrudApi from './components/CrudApi';
 import ClientsApi from './components/ClientsApi';
 import SongSearch from './components/SongSearch';
+import SelectsAnidados from './components/SelectsAnidados';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <h1>Ejercicios con React</h1>
       <hr/>
       {/* <ClientsApi/> */}
+      <SelectsAnidados />
+      <hr/>
       <SongSearch />
       <hr/>
       <CrudApi/>
