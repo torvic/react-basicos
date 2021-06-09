@@ -30,10 +30,31 @@ const ElectricMeterApi = () => {
       });
   }, [url]);
 
+  const createData = (data) => {
+    // POST
+    console.log(data);
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    helpHttp()
+      .post(url, options)
+      .then((res) => {
+				console.log(res);
+				if (!res.err) {
+					// update table
+					setDb([...db, res]);
+				} else {
+					setError(res);
+				}
+      });
+  };
+
   return (
     <div>
       <h2>Medidores Electricos API</h2>
-      <ElectricMeterForm />
+      <ElectricMeterForm createData={createData} />
       {loading && <Loader />}
       {error && <Message msg={`Error ${error.statusText}`} bgColor="#dc3545" />}
       {db && <ElectricMeterTable data={db} />}

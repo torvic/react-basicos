@@ -42,7 +42,7 @@ const ClientsForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       return;
     }
 
-    if (form.id == null) {
+    if (form.id === null) {
       createData(form);
     } else {
       updateData(form);
