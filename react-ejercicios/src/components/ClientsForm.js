@@ -23,7 +23,7 @@ const ClientsForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   }, [dataToEdit]);
 
   const handleChange = (e) => {
-    console.log(e);
+    //console.log(e);
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -58,7 +58,7 @@ const ClientsForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   return (
     <div>
-      <h3>Add Clients</h3>
+      <h3>Agregar Cliente</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

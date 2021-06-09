@@ -2,9 +2,10 @@ import React from "react";
 import ClientsTableRow from "./ClientsTableRow";
 
 const ClientsTable = ({ data, setDataToEdit, deleteData }) => {
+  console.log(data);
   return (
     <div>
-      <h3>Table of Clients</h3>
+      <h3>Lista de Clientes</h3>
       <table>
         <thead>
           <tr>
@@ -21,7 +22,7 @@ const ClientsTable = ({ data, setDataToEdit, deleteData }) => {
           {data.length > 0 ? (
             data.map((el) => (
               <ClientsTableRow
-                key={el.id}
+                key={el.numero_suministro}
                 el={el}
                 setDataToEdit={setDataToEdit}
                 deleteData={deleteData}
