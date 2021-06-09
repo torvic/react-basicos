@@ -3,11 +3,12 @@ const ElectricMeterForm = () => {
     <div>
       <h3>Agregar Medidor Electrico</h3>
       <form>
-        <input type="text" name="numero_medidor" placeholder="Numero del Medidor" />
-        <input type="text" name="potencia" placeholder="Potencia kW" />
-        <input type="text" name="acometida" placeholder="Acometida" />
-        <input type="text" name="client_id" placeholder="Numero de Suministro" />
-        <input type="text" name="sensor_id" placeholder="Codigo del Sensor" />
+        <input type="text" name="measurer" placeholder="Numero de Medidor" />
+        <input type="text" name="client" placeholder="Numero de Cliente" />
+        <input type="text" name="sensor" placeholder="ID del sensor" />
+        <input type="text" name="location" placeholder="Ubicación" />
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Limpiar" />
       </form>
     </div>
   );
