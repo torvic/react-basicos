@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const initialForm = {
   id: null,
@@ -8,8 +8,21 @@ const initialForm = {
   location: "",
 };
 
-const ElectricMeterForm = ({ createData }) => {
+const ElectricMeterForm = ({
+  createData,
+  updateData,
+  dataToEdit,
+  setDataToEdit,
+}) => {
   const [form, setForm] = useState(initialForm);
+
+  useEffect(() => {
+    if (dataToEdit) {
+      setForm(dataToEdit);
+    } else {
+      setForm(initialForm);
+    }
+  }, [dataToEdit]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -26,46 +39,50 @@ const ElectricMeterForm = ({ createData }) => {
     if (form.id === null) {
       // create data
       createData(form);
+    } else {
+      // update data
+      updateData(form);
     }
 
-		handleReset();
+    handleReset();
   };
 
   const handleReset = (e) => {
     setForm(initialForm);
+		setDataToEdit(null);
   };
 
   return (
     <div>
-      <h3>Agregar Medidor Electrico</h3>
+      <h3>{dataToEdit ? "Editar Medidor Electrico":"Agregar Medidor Electrico"}</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="measurer"
           placeholder="Numero de Medidor"
           onChange={handleChange}
-					value={form.measurer}
+          value={form.measurer}
         />
         <input
           type="text"
           name="client"
           placeholder="Numero de Cliente"
           onChange={handleChange}
-					value={form.client}
+          value={form.client}
         />
         <input
           type="text"
           name="sensor"
           placeholder="ID del sensor"
           onChange={handleChange}
-					value={form.sensor}
+          value={form.sensor}
         />
         <input
           type="text"
           name="location"
           placeholder="Ubicación"
           onChange={handleChange}
-					value={form.location}
+          value={form.location}
         />
         <input type="submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />

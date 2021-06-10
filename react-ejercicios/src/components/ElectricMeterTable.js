@@ -1,6 +1,6 @@
 import ElectricMeterTableRow from "./ElectricMeterTableRow";
 
-const ElectricMeterTable = ({ data }) => {
+const ElectricMeterTable = ({ data, setDataToEdit, deleteData }) => {
   return (
     <div>
       <h3>Lista de Medidores Electricos</h3>
@@ -17,7 +17,12 @@ const ElectricMeterTable = ({ data }) => {
         <tbody>
           {data.length > 0 ? (
             data.map((el) => (
-              <ElectricMeterTableRow key={el.id} el={el} />
+              <ElectricMeterTableRow
+                key={el.id}
+                el={el}
+                setDataToEdit={setDataToEdit}
+								deleteData={deleteData}
+              />
             ))
           ) : (
             <tr>

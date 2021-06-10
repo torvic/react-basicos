@@ -1,4 +1,4 @@
-const ElectricMeterTableRow = ({ el }) => {
+const ElectricMeterTableRow = ({ el, setDataToEdit, deleteData }) => {
   let { id, measurer, client, sensor, location } = el;
 
   return (
@@ -8,8 +8,8 @@ const ElectricMeterTableRow = ({ el }) => {
       <td>{sensor}</td>
       <td>{location}</td>
       <td>
-        <button>Editar</button>
-        <button>Eliminar</button>
+        <button onClick={() => setDataToEdit(el)} >Editar</button>
+        <button onClick={() => deleteData({id, measurer})} >Eliminar</button>
       </td>
     </tr>
   );

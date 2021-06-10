@@ -15,14 +15,14 @@ function App() {
       <hr/>
       <ClientsApi/>
       <hr/>
-      {/* <SelectsAnidados />
+      <SelectsAnidados />
       <hr/>
       <SongSearch />
       <hr/>
       <CrudApi/>
       <hr/>
       <CrudApp/>
-      <hr/> */}
+      <hr/>
     </>
   );
 }
