@@ -4,7 +4,7 @@ import { useFetch } from "./UseFetch";
 
 const SelectList = ({ title, url, handleChange }) => {
   const { data, error, loading } = useFetch(url);
-  console.log(data);
+  //console.log(data);
 
   if (!data) return null;
 
@@ -20,7 +20,7 @@ const SelectList = ({ title, url, handleChange }) => {
   let id = `select-${title}`;
   let label = title.charAt(0).toUpperCase() + title.slice(1);
   let options = data.response[title];
-  console.log(options);
+  //console.log(options);
 
   return (
     <>
