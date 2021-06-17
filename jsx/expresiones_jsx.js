@@ -1,6 +1,6 @@
-/* Presentadno JSX */
-/* Insertando expresiones  */
+/* Presentando JSX - Es una extension de la sintaxis de JavaScript (no es un string ni HTML).*/
 
+/* Insertando expresiones - Puedes poner cualquier expresion de JavaScript dentro de llaves en JSX  */
 const name = "Josh Perez";
 const element = <h1>Hello, {2 + 2}</h1>;
 

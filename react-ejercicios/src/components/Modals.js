@@ -1,10 +1,13 @@
 import { useModal } from "../hooks/useModal";
 import ContactForm from "./ContactForm";
 import Modal from "./Modal";
+import ModalPortal from "./ModalPortal";
 
 const Modals = () => {
   const [isOpenModal1, openModal1, closeModal1] = useModal(false);
   const [isOpenModal2, openModal2, closeModal2] = useModal(false);
+  const [isOpenModalPortal, openModalPortal, closeModalPortal] =
+    useModal(false);
   return (
     <div>
       <h2>Modales</h2>
@@ -19,8 +22,18 @@ const Modals = () => {
         {/* <h3>Modal 2</h3>
         <p>Hola este es el contenido de mi Modal 2</p>
         <img src="https://placeimg.com/400/400/tech" alt="Tech" /> */}
-				<ContactForm/>
+        <ContactForm />
       </Modal>
+      <button onClick={openModalPortal}>Modal en Portal</button>
+      <ModalPortal isOpen={isOpenModalPortal} closeModal={closeModalPortal}>
+        <h3>Modal Portal</h3>
+        <p>
+          Hola este es el contenido de mi Modal Portal que carga en otro nodo
+          del DOM diferente donde carga nuestra App de React, gracias a aun
+          React Portal
+        </p>
+        <img src="https://placeimg.com/400/400/tech" alt="Tech" />
+      </ModalPortal>
     </div>
   );
 };
