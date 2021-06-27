@@ -1,11 +1,11 @@
-const Input = ({label, handleChange, value}) => {
+import React from 'react';
+const Input = ({ label, handleChange, value }) => {
+  return (
+    <div>
+      <label htmlFor="">{label}</label>
+      <input type="text" onChange={handleChange} value={value} />
+    </div>
+  );
+};
 
-	return (
-		<div>
-			<label htmlFor="">{label}</label>
-			<input type="text" onChange={handleChange} value={value} />
-		</div>
-	)
-}
-
-export default Input
+export default Input;

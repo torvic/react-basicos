@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const initialForm = {
-  artist: "",
-  song: "",
+  artist: '',
+  song: '',
 };
 
-const SongForm = ({ handleSearch }) => {
+const SongForm = ({ handleSearch, handleSaveSong }) => {
   const [form, setForm] = useState(initialForm);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleChange = (e) => {
     //console.log(e.target.value);
@@ -21,13 +22,15 @@ const SongForm = ({ handleSearch }) => {
     e.preventDefault();
 
     if (!form.artist || !form.song) {
-      alert("Datos Incompletos");
+      alert('Datos Incompletos');
+      setIsDisabled(true);
       return;
     }
 
     handleSearch(form);
 
     setForm(initialForm);
+    setIsDisabled(false);
   };
 
   return (
@@ -48,6 +51,12 @@ const SongForm = ({ handleSearch }) => {
           value={form.song}
         />
         <input type="submit" value="Enviar" />
+        <input
+          type="button"
+          onClick={handleSaveSong}
+          value="Agregar cancion"
+          disabled={isDisabled && 'disabled'}
+        />
       </form>
     </div>
   );

@@ -1,10 +1,13 @@
-import "./App.css";
-import ContactForm from "./componentes/ContactForm";
+import React from 'react';
+import './App.css';
+import ContactForm from './componentes/ContactForm';
+import ReactRouter from './pages';
 
 function App() {
   return (
     <div>
-      <ContactForm />
+      <ReactRouter />
+      {/* <ContactForm /> */}
     </div>
   );
 }
