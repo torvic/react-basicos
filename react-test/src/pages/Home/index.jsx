@@ -23,6 +23,12 @@ const Home = () => {
           <li>
             <Link to="/users">Users</Link>
           </li>
+          <li>
+            <Link to="/chart">Chart</Link>
+          </li>
+          <li>
+            <Link to="/websocket">Websocket</Link>
+          </li>
         </ul>
       </nav>
 

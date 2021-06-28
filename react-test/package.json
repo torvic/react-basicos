@@ -37,7 +37,10 @@
     ]
   },
   "devDependencies": {
+    "chart.js": "^3.4.0",
     "eslint": "^7.29.0",
-    "eslint-plugin-react": "^7.24.0"
+    "eslint-plugin-react": "^7.24.0",
+    "react-chartjs-2": "^3.0.3",
+    "react-use-websocket": "^2.7.1"
   }
 }

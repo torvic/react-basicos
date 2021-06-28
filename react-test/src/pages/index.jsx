@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Users from './Users';
 import Login from './Login';
+import Chart from './Chart';
+import Websocket from './Websocket';
 
 const ReactRouter = () => {
   return (
@@ -12,11 +14,17 @@ const ReactRouter = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/users">
+        <Route path="/users">
           <Users />
         </Route>
-        <Route exact path="/login">
+        <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/chart">
+          <Chart />
+        </Route>
+        <Route path="/websocket">
+          <Websocket />
         </Route>
       </Switch>
     </Router>
