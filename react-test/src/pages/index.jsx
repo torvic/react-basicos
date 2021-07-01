@@ -6,6 +6,7 @@ import Users from './Users';
 import Login from './Login';
 import Chart from './Chart';
 import Websocket from './Websocket';
+import Redux from './Redux';
 
 const ReactRouter = () => {
   return (
@@ -25,6 +26,9 @@ const ReactRouter = () => {
         </Route>
         <Route path="/websocket">
           <Websocket />
+        </Route>
+        <Route path="/redux">
+          <Redux />
         </Route>
       </Switch>
     </Router>

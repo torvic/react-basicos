@@ -29,6 +29,9 @@ const Home = () => {
           <li>
             <Link to="/websocket">Websocket</Link>
           </li>
+          <li>
+            <Link to="/redux">Redux</Link>
+          </li>
         </ul>
       </nav>
 
