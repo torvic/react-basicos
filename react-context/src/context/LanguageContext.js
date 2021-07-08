@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
+import { createContext } from 'react';
 
-const initialTheme = 'light';
+const LanguageContext = createContext();
+
 const initialLanguage = 'es';
-
 const translations = {
   es: {
-    headerTitle: 'Mi aplicación sin Context',
+    headerTitle: 'Mi aplicación CON Context',
     headerSubtitle: 'Mi cabecera',
     headerLight: 'Claro',
     headerDark: 'Oscuro',
@@ -20,7 +18,7 @@ const translations = {
     footerTitle: 'Mi pié de página',
   },
   en: {
-    headerTitle: 'My applicarion without Context',
+    headerTitle: 'My applicarion with Context',
     headerSubtitle: 'My header',
     headerLight: 'Light',
     headerDark: 'Dark',
@@ -33,23 +31,9 @@ const translations = {
   },
 };
 
-const initialAuth = null;
-
-const MyPage = () => {
-  const [theme, setTheme] = useState(initialTheme);
+const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(initialLanguage);
   const [texts, setTexts] = useState(translations[language]);
-  const [auth, setAuth] = useState(initialAuth);
-
-  const handleTheme = (e) => {
-    // console.log(e.target.value);
-    if (e.target.value === 'light') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
-  };
-
   const handleLanguage = (e) => {
     // console.log(e.target.value);
     if (e.target.value === 'es') {
@@ -60,28 +44,11 @@ const MyPage = () => {
       setTexts(translations.en);
     }
   };
-
-  const handleAuth = (e) => {
-    if (auth) {
-      setAuth(null);
-    } else {
-      setAuth(true);
-    }
-  };
+  const data = { texts, handleLanguage };
   return (
-    <div className="my-page">
-      <Header
-        theme={theme}
-        handleTheme={handleTheme}
-        texts={texts}
-        handleLanguage={handleLanguage}
-        auth={auth}
-        handleAuth={handleAuth}
-      />
-      <Main theme={theme} texts={texts} auth={auth} />
-      <Footer theme={theme} texts={texts} />
-    </div>
+    <LanguageContext.Provider value={data}>{children}</LanguageContext.Provider>
   );
 };
 
-export default MyPage;
+export { LanguageProvider };
+export default LanguageContext;
