@@ -64,6 +64,7 @@ const SongSearch = () => {
     setSearch(null);
     localStorage.setItem('mySongs', JSON.stringify(songs));
   };
+
   const handleDeleteSong = (id) => {
     // alert(`Eliminando cancion con el id ${id}`);
     let isDelete = window.confirm(
