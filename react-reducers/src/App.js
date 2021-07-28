@@ -1,4 +1,5 @@
 import Contador from "./components/Contador";
+import ContadorMejorado from "./components/ContadorMejorado";
 
 function App() {
   return (
@@ -6,6 +7,8 @@ function App() {
       <h1>useReducer</h1>
 			<hr/>
 			<Contador/>
+			<hr/>
+			<ContadorMejorado/>
     </div>
   );
 }
